@@ -18,7 +18,9 @@ services:
     container_name: mongo   
     ports:
       - "27017:27017"
-    restart: unless-stopped     
+    restart: unless-stopped   
+    volumes:
+      - ./mongodb:/data/db    
     
   mongo-express:
     image: mongo-express
@@ -26,8 +28,7 @@ services:
     ports:
       - 8081:8081
     restart: unless-stopped   
-    volumes:
-      - ./mongodb:/data/db  
+ 
       
       
 
