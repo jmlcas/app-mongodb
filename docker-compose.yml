@@ -15,12 +15,12 @@ services:
 
   mongo:
     image: mongo
-    container_name: mongo   
-    ports:
-      - "27017:27017"
+    container_name: mongo 
+    expose:
+      - 27017
     restart: unless-stopped   
     volumes:
-      - ./mongodb:/data/db    
+      - ./mongodb-data:/data/db    
     
   mongo-express:
     image: mongo-express
