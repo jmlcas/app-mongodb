@@ -25,7 +25,7 @@ window.onload = function() {
               cy-data=${'todo-' + index}
               onClick="doneTODO(event)"
             >
-              Done
+              Hecho
             </button>
           </td>`
 
