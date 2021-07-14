@@ -3,7 +3,7 @@ version: '3'
 services:
 
   web:
-    image: "app-mongodb"
+    image: app-mongodb
     container_name: app-mongodb
     build: .
     command: "node server.js"
@@ -11,11 +11,19 @@ services:
       - "5000:5000"
     restart: unless-stopped  
     depends_on:
-      - "mongo"
+      - mongo
 
   mongo:
-    image: "mongo"
+    image: mongo
     container_name: mongo   
     ports:
       - "27017:27017"
     restart: unless-stopped     
+    
+  mongo-express:
+    image: mongo-express
+    container_name: mongo-express   
+    ports:
+      - 8081:8081
+    restart: unless-stopped   
+
